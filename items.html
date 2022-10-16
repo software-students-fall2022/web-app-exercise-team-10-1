@@ -1,0 +1,12 @@
+<div class=page>
+    <h1>Item List</h1>
+    <ul class=items>
+    {% for item in items %}
+        <li><h1>{{ item.title }}</h1>
+        <form action="{{ url_for('delete_item') }}" method=post class=delete-item>
+            <input type=hidden value="{{ item.name }}"name=item_to_delete />
+            <input type=submit />
+         </form>
+    {% endform %}
+    </ul>
+</div>
