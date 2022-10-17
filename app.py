@@ -49,7 +49,7 @@ def query_inventory():
     name = request.args.get('name')
     item = Items.objects(name=record['name'])
     if not item:
-        returnjsonify({'error': 'item not found'})
-    return jsonify(item.to/_json())
+        return jsonify({'error': 'item not found'})
+    return jsonify(item.to_json())
     
     return render_template("search.html", page="Search")
