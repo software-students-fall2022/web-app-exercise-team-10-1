@@ -1,0 +1,16 @@
+
+<h2>Add Item To Inventory</h2>
+<form method="POST" action="{{ url_for('add_item') }}">
+  <p>
+    Item name:
+    <input type="text" id="iname" name="iname" value="{{doc.name}}" /><br />
+  </p>
+  <p>
+    Quantity:
+    <input type="number" id="quantity" name="quantity" value="{{doc.quantity}}" /><br />
+  </p>
+  <p>
+    <input type="submit" name="post-btn" value="Save" />
+  </p>
+</form>
+
