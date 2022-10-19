@@ -63,3 +63,18 @@ def delete(item_id):
     return redirect(url_for('index'))
     
     
+# route to add to the inventory
+@app.route('/', methods=['POST'])
+def add_item():
+    itemName = request.form['iname']
+    qty = request.form.get('quantity',type=int)
+
+    # create a new document with the data the user entered
+    doc = {
+        "name": itemName,
+        "quantity": qty, 
+        "added_at": datetime.datetime.utcnow()
+    }
+    db.exampleapp.insert_one(doc) # insert a new document
+
+    return redirect(url_for('index')) 
