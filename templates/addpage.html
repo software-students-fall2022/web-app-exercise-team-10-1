@@ -11,14 +11,13 @@
   <label for="iname">Item Name</label>
   <br>
   <input type="text" name="iname"
-  placeholder="Item name"
-  value="{{ request.form['iname'] }}"></input>
+  placeholder="Item name"></input>
 <br>
   
 <label for="quantity">Quantity</label>
   <br>
   <input type="number" name="quantity"
-  value="{{ request.form.get('quantity',type=int) }}"></input>
+  placeholder=0></input>
 <br>
   
     <a href="{{url for('home')}}"> Cancel</a>
