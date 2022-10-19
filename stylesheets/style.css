@@ -22,18 +22,18 @@ form {
   	background-color:#eee;
 }
 
-#grocery-list {
+#item-list {
 	background-color:#ddd;
 	padding: 1em;
 }
 
-#grocery-list li {
+#item-list li {
 	list-style-type: none;
 	padding-top:0.25em;
 	padding-bottom:0.25em;
 }
 
-#grocery-list li.checked {
+#item-list li.checked {
 	text-decoration: line-through;
 	padding: 0.25em 0.25em 0.25em 1.5em;
 }
