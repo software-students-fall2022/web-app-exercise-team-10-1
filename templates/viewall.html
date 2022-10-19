@@ -1,0 +1,20 @@
+<h2>Inventory</h2>
+
+<table>
+	<tr>
+		<td>Item Name</td>
+		<td>Quantity</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+{{#each item}}
+	<tr>
+		<td>{{this.name}}</td>
+		<td>{{this.quantity}}</td>
+		<td><a href="/gradebooks/gradebook?id={{this.id}}">View</a></td>
+		<td><a href="/gradebooks/edit_gradebook?id={{this.id}}">Edit</a></td>
+		<td><a href="/gradebooks/delete_gradebook?id={{this.id}}" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> 
+	</tr>
+{{/each}}
+</table>
