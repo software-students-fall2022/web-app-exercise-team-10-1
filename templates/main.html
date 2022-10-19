@@ -31,6 +31,12 @@
                         <input id="filterBtn" type="submit" value="Search">
                     </form>
                 </div>
+                <div class="form-container">
+                    <form id = "edit" method="POST" action="/items/edit">
+                        <p><label for="quantity">New Quantity:</label> <input id="quantity" class="quantity" type="text" name="quantity" required></p>
+                        <p><input id="editBtn" type="submit" value="Edit"></p>
+                    </form>
+                </div>
                 <table>
                     <thead>
                         <th>Name</th>
