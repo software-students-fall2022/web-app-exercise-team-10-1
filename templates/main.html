@@ -19,40 +19,22 @@
                 <h2>Edit or Search for Items</h2>
                 <div class="form-container">
                     <form id="create" method="POST" action="/items/create">
-                        <p><label for="name">Name:</label> <input id="name" type="text" name="name" required></p>
-                        <label for="type">Clothing Type:</label>
-                        <select id="type" class="type" name="type">
-                            <option value="Top">Top</option>
-                            <option value="Bottom">Bottom</option>
-                            <option value="Other">Other</option>
-                        </select>
+                        <p><label for="name">Item Name:</label> <input id="name" type="text" name="name" required></p>
                         </p>
                         <p><label for="quantity">Quantity:</label> <input id="quantity" class="quantity" type="text" name="quantity" required></p>
-                        <p><label for="notes">Notes:</label> <input type="text" id="notes" name="notes"></p>
                         <p><input id="addBtn" type="submit" value="Add"></p>
                     </form>
                 </div>
                 <div class="form-container">
                     <form method="GET" action="/">
-                        <p>
-                        Clothing Type:
-                        <select id="filterType" name="type" class="type">
-                            <option value="">All</option>
-                            <option value="Top">Top</option>
-                            <option value="Bottom">Bottom</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        </p>
-                        <p>Name: <input type="text" id="filterName" name="name" class="name" maxlength="4"></p>
-                        <input id="filterBtn" type="submit" value="Filter">
+                        <p>Item Name: <input type="text" id="filterName" name="name" class="name" maxlength="4"></p>
+                        <input id="filterBtn" type="submit" value="Search">
                     </form>
                 </div>
                 <table>
                     <thead>
                         <th>Name</th>
-                        <th>Clothing Type</th>
                         <th>Quantity</th>
-                        <th>Notes</th>
                     </thead>
                     <tbody>
                     </tbody>
