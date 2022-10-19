@@ -42,10 +42,9 @@ def home():
     """
     Route for the home page
     """
+    return render_template("home.html")
 @app.route('/search', methods=['GET'])
 def search_inventory():
-    #not fully done - I put some variables in place of what they might actually be
-    #not sure about what you all might have named things
     name = request.args.get('name')
     docs = db.exampleapp.find({"name": {"$regex": name, "$options": "i"}})
     if not docs:

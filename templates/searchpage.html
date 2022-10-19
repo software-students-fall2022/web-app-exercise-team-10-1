@@ -1,10 +1,10 @@
-{% extends 'base.html' %} {% block container %}
-<h2>Update</h2>
-<p>Search a record in the MongoDB database collection.</p>
-<form method="GET" action="{{ url_for('search_inventory', mongoid=mongoid) }}">
+{% extends 'home.html' %} {% block container %}
+<h2>Search</h2>
+<p>Search Fot an Item in the inventory.</p>
+<form method="GET" action="{{ url_for('search_inventory') }}">
   <p>
     Item name:
-    <input type="text" id="fname" name="fname" value="{{doc.name}}" /><br />
+    <input type="text" name="fname" value="{{doc.name}}" /><br />
   </p>
   <body>
     <p>Items:</p>
@@ -15,8 +15,7 @@
     </ul>
   </body>
   <p>
-    <a href="{{ url_for('home')}}">Cancel</a>
-    <input type="submit" name="post-btn" value="Save" />
+    <a href="{{ url_for('home')}}">Home</a>
   </p>
 </form>
 {% endblock %}
