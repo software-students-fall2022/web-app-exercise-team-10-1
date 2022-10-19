@@ -53,3 +53,13 @@ def query_inventory():
     return jsonify(item.to/_json())
     
     return render_template("search.html", page="Search")
+
+
+@app.route('/items/delete/<int:item_id>', methods=['POST'])
+def delete(item_id):
+    item = Item.query.get_or_404(item_id)
+    db.session.delete_one(item)
+    db.session.commit()
+    return redirect(url_for('index'))
+    
+    
