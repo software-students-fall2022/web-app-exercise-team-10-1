@@ -63,20 +63,21 @@ def delete(item_id):
     
     
 # route to add to the inventory
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def add_item():
-    itemName = request.form['iname']
-    qty = request.form.get('quantity',type=int)
+    if request.method == 'POST':
+        itemName = request.form['iname']
+        qty = request.form.get('quantity',type=int)
 
-    # create a new document with the data the user entered
-    doc = {
-        "name": itemName,
-        "quantity": qty, 
-        "added_at": datetime.datetime.utcnow()
-    }
-    db.exampleapp.insert_one(doc) # insert a new document
+        # create a new document with the data the user entered
+        doc = {
+            "name": itemName,
+            "quantity": qty, 
+            "added_at": datetime.datetime.utcnow()
+        }
+        db.exampleapp.insert_one(doc) # insert a new document
 
-    return redirect(url_for('index')) 
+    return render_template('addpage.html')
 
 @app.route('/items/edit/<int:item_id>', methods = ['POST'])
 def edit_inventory(item_id):

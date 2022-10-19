@@ -7,20 +7,24 @@
     />
 </head>
 <div class="page">
-<form method="POST" action="{{ url_for('add_item') }}">
-  <p>
-    Item name:
-    <input type="text" id="iname" name="iname" /><br />
-  </p>
-  <p>
-    Quantity:
-    <input type="number" id="quantity" name="quantity" /><br />
-  </p>
-  <p>
-    <a href="{{url for('index')}}"> Cancel</a>
-    <input type="submit" name="post-btn" value="Save" />
+<form method="post">
+  <label for="iname">Item Name</label>
+  <br>
+  <input type="text" name="iname"
+  placeholder="Item name"
+  value="{{ request.form['iname'] }}"></input>
+<br>
+  
+<label for="quantity">Quantity</label>
+  <br>
+  <input type="number" name="quantity"
+  value="{{ request.form.get('quantity',type=int) }}"></input>
+<br>
+  
+    <a href="{{url for('home')}}"> Cancel</a>
+    <button type="submit">Submit</button>
     
-  </p>
-</div>
+ 
 </form>
+</div>
 
