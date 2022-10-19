@@ -1,16 +1,26 @@
 
-<h2>Add Item To Inventory</h2>
+<h2 class="title">Add Item To Inventory</h2>
+<head>
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/addPageStyle.css') }}"
+    />
+</head>
+<div class="page">
 <form method="POST" action="{{ url_for('add_item') }}">
   <p>
     Item name:
-    <input type="text" id="iname" name="iname" value="{{doc.name}}" /><br />
+    <input type="text" id="iname" name="iname" /><br />
   </p>
   <p>
     Quantity:
-    <input type="number" id="quantity" name="quantity" value="{{doc.quantity}}" /><br />
+    <input type="number" id="quantity" name="quantity" /><br />
   </p>
   <p>
+    <a href="{{url for('index')}}"> Cancel</a>
     <input type="submit" name="post-btn" value="Save" />
+    
   </p>
+</div>
 </form>
 
