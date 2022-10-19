@@ -42,6 +42,7 @@ def home():
     """
     Route for the home page
     """
+    return render_template("home.html")
 @app.route('/search', methods=['GET'])
 def search_inventory():
     name = request.args.get('name')
