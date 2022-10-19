@@ -78,3 +78,10 @@ def add_item():
     db.exampleapp.insert_one(doc) # insert a new document
 
     return redirect(url_for('index')) 
+
+@app.route('/items/edit/<int:item_id>', methods = ['POST'])
+def edit_inventory(item_id):
+    item = Item.query.get_or_404(item_id)
+    new_in = request.form.get('edited quantity value',type=int)
+    item.qty = new_in
+    db.session.commit()
