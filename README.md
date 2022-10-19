@@ -5,12 +5,12 @@ A little exercise to build a web application following an agile development proc
 
 ## Product vision statement
 
-See instructions. Delete this line and place the Product Vision Statement here.
+Inventory Check is a web application for store owners to keep track of the stock they have. With this web application, they will be able to add new items, edit inventory, delete items, and make sure everything is updated consistently.
 
 ## User stories
 
-See instructions. Delete this line and place a link to the user stories here.
+[Link](https://github.com/software-students-fall2022/web-app-exercise-team-10-1/issues) to our user stories.
 
 ## Task boards
 
-See instructions. Delete this line and place a link to the task boards here.
+[Link](https://github.com/software-students-fall2022/web-app-exercise-team-10-1/projects?query=is%3Aopen) to our taskboards.
