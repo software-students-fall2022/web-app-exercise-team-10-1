@@ -62,7 +62,7 @@ def delete(item_id):
     
     
 # route to add to the inventory
-@app.route('/', methods=['GET','POST'])
+@app.route('/inventories/add_item', methods=['GET','POST'])
 def add_item():
     if request.method == 'POST':
         itemName = request.form['iname']
