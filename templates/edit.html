@@ -1,0 +1,27 @@
+<html>
+<h2 class="title">Edit Item</h2>
+<head>
+  <link rel= "stylesheet" href="/stylesheets/style.css">
+</head>
+<div class="page">
+<form method="post">
+  <label for="iname">New Item Name</label>
+  <br>
+  <input type="text" name="iname"
+  placeholder="Item name"></input>
+<br>
+  
+<label for="quantity">New Quantity</label>
+  <br>
+  <input type="number" name="quantity"
+  placeholder=0></input>
+<br>
+  
+    <a href="{{url_for('home')}}"> Cancel</a>
+    <button type="submit">Submit</button>
+    
+ 
+</form>
+</div>
+
+</html>
