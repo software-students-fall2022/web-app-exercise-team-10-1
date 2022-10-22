@@ -67,7 +67,9 @@ def add_item():
     if request.method == 'POST':
         itemName = request.form['iname']
         qty = request.form.get('quantity',type=int)
-
+        
+        if len(itemName)<=0:
+            return redirect(url_for('home'))
         # create a new document with the data the user entered
         doc = {
             "name": itemName,
