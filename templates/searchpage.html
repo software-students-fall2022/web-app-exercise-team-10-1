@@ -3,26 +3,43 @@
 <head>
   <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/searchPage.css') }}">
 </head>
-<h2>Search</h2>
-<p>Search For an Item in The inventory.</p>
-<form method="GET" action="{{ url_for('search_inventory') }}">
+<div class="title">Search For an Item in The inventory</div>
+
+<div class="page">
+<form method="GET" class="frm">
   <p>
     Item name:
-    <input type="text" name="fname" value="{{doc.name}}" /><br />
+    <input type="text" name="fname"/><br />
   </p>
   <p>
     <input type="submit" name="post-btn" value="Submit" />
   </p>
-  <body>
-    <p>Items:</p>
-    <ul>
-      {% for item in items %}
-      <li>{ item }</li>
-      {% endfor %}
-    </ul>
-  </body>
+  <table>
+    <tr>
+      <td>Item Name</td>
+      <td>Quantity</td>
+      <td></td>
+      <td></td>
+    </tr>
+    {% for item in item %}
+    <tr>
+      <td>
+        {{item.name}}
+      </td>
+      <td >
+        {{ item.quantity }}
+      </td>
+      <td>
+      <a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="/items/delete/<item_id>">Delete</a>
+    </td>
+      
+    </tr>
+    {%endfor%}
+  </table>
   <p>
     <a href="{{ url_for('home')}}">Home</a>
   </p>
 </form>
-{% endblock %}
+</div>
+</body>
+</html>

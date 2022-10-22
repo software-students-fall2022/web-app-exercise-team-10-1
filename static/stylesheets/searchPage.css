@@ -1,4 +1,4 @@
-.h2{
+.title{
     color:midnightblue;
     text-align: center;
     font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -6,7 +6,7 @@
     font-size: 150%;
 }
 
-.p{
+.page{
     margin:auto;
     width: 50%;
     height: 50%;
@@ -31,11 +31,11 @@ table {
     width: 290px;
   }
   
-  th {
+th {
     padding: .2em;
   }
   
-  td {
+td {
     padding-left: .5em;
     padding-right: .5em;
     border: 1px solid rgb(8, 5, 99);
