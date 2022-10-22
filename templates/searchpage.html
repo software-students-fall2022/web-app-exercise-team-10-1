@@ -1,10 +1,17 @@
-{% extends 'home.html' %} {% block container %}
+<html>
+
+<head>
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/searchPage.css') }}">
+</head>
 <h2>Search</h2>
-<p>Search Fot an Item in the inventory.</p>
+<p>Search For an Item in The inventory.</p>
 <form method="GET" action="{{ url_for('search_inventory') }}">
   <p>
     Item name:
     <input type="text" name="fname" value="{{doc.name}}" /><br />
+  </p>
+  <p>
+    <input type="submit" name="post-btn" value="Submit" />
   </p>
   <body>
     <p>Items:</p>

@@ -1,0 +1,47 @@
+.h2{
+    color:midnightblue;
+    text-align: center;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.p{
+    margin:auto;
+    width: 50%;
+    height: 50%;
+    border: 3px solid midnightblue;;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.form{
+    color:midnightblue;
+    text-align: center;
+    position: fixed;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+}
+
+table {
+    margin: .3em;
+    width: 290px;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    padding-left: .5em;
+    padding-right: .5em;
+    border: 1px solid rgb(8, 5, 99);
+    background-color: rgb(132, 15, 124);
+  }
+
+a:link{
+    color:pink;
+}
