@@ -1,10 +1,22 @@
-body{
-    background-color: blue;
-}
 .title{
+    color:midnightblue;
     text-align: center;
-    color: pink;
 }
+
 .page{
-   margin:auto;
+    margin:auto;
+    width: 50%;
+    height: 50%;
+    border: 3px solid midnightblue;;
+    padding: 10px;
 }
+
+.frm{
+    color:midnightblue;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
