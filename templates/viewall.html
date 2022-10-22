@@ -22,7 +22,7 @@
 			{{ item.quantity }}
 		</td>
 		<td>
-		<a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="{{ url_for('delete',item_id=item._id)}}">Delete</a>
+		<a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="/items/delete/<item_id>">Delete</a>
 	</td>
 		
 	</tr>
