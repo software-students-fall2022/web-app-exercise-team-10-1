@@ -84,3 +84,9 @@ def edit_inventory(item_id):
     new_in = request.form.get('edited quantity value',type=int)
     item.qty = new_in
     db.session.commit()
+
+
+@app.route('/inventories/', methods=['GET'])
+def view_all():
+    item = db.exampleapp.find({}).sort("created_at", -1)
+    return render_template('viewall.html', item=item) 
