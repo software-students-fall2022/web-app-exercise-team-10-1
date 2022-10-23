@@ -82,10 +82,15 @@ def add_item():
 
 @app.route('/items/edit/<item_id>', methods = ['GET','POST'])
 def edit_inventory(item_id):
-    item = Item.query.get_or_404(item_id)
-    new_in = request.form.get('edited quantity value',type=int)
-    item.qty = new_in
-    db.session.commit()
+    if request.method == 'POST':
+        qty = request.form.get('quantity',type=int)
+        
+        if qty == 0:
+            return redirect(url_for('home'))
+        
+        db.exampleapp.updateOne({_id: item_id}, {$set: {"quantity": qty}})
+
+    return render_template('edit.html')
 
 
 @app.route('/inventories/', methods=['GET'])
