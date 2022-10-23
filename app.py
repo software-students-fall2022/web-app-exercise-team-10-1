@@ -58,9 +58,7 @@ def search_inventory():
 
 @app.route('/items/delete/<item_id>', methods=['GET','POST'])
 def delete(item_id):
-    item = Item.query.get_or_404(item_id)
-    db.exampleapp.delete_one(item)
-    db.exampleapp.commit()
+    db.exampleapp.delete_one(item_id)
     return render_template('delete.html')
     
     
