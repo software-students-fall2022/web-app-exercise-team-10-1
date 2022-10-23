@@ -43,14 +43,17 @@ def home():
     Route for the home page
     """
     return render_template("home.html")
-@app.route('/inventories/search_item', methods=['GET'])
+@app.route('/inventories/search_item', methods=['GET', 'POST'])
 def search_inventory():
-    name = request.args.get('name')
-    docs = db.exampleapp.find({"name": {"$regex": name, "$options": "i"}})
-    if not docs:
-        return jsonify({'error': 'item not found'})
-    
-    return render_template("searchpage.html")
+    if request.method=='GET':
+        return render_template('searchpage.html')
+    if request.method=='POST':
+        name = request.form.get('name')
+        item = db.exampleapp.find({"name": {"$regex": name, "$options": "i"}})
+        if not item:
+            return jsonify({'error': 'item not found'})
+        
+        return render_template("searchpage.html", item=item)
 
 
 @app.route('/items/delete/<item_id>', methods=['GET','POST'])

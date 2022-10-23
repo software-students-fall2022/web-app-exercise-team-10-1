@@ -15,7 +15,7 @@
     background-color: #eee;
 }
 
-.form{
+.frm{
     color:midnightblue;
     text-align: center;
     position: fixed;
@@ -27,8 +27,20 @@
 }
 
 table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse:collapse;
+  text-align: center;
+}
+/*
+
+table {
     margin: .3em;
     width: 290px;
+    text-align: center;
   }
   
 th {
@@ -39,9 +51,9 @@ td {
     padding-left: .5em;
     padding-right: .5em;
     border: 1px solid rgb(8, 5, 99);
-    background-color: rgb(132, 15, 124);
+    background-color: rgb(213, 115, 206);
   }
-
+*/
 a:link{
     color:pink;
 }
