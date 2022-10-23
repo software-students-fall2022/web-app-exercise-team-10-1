@@ -35,25 +35,7 @@ table, th, td {
   border-collapse:collapse;
   text-align: center;
 }
-/*
 
-table {
-    margin: .3em;
-    width: 290px;
-    text-align: center;
-  }
-  
-th {
-    padding: .2em;
-  }
-  
-td {
-    padding-left: .5em;
-    padding-right: .5em;
-    border: 1px solid rgb(8, 5, 99);
-    background-color: rgb(213, 115, 206);
-  }
-*/
 a:link{
     color:pink;
 }

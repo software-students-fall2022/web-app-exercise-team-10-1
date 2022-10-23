@@ -100,3 +100,8 @@ def edit_inventory(item_id):
 def view_all():
     item = db.exampleapp.find({}).sort("created_at", -1)
     return render_template('viewall.html', item=item) 
+# run the app
+if __name__ == "__main__":
+    #import logging
+    #logging.basicConfig(filename='/home/ak8257/error.log',level=logging.DEBUG)
+    app.run(debug = True)
