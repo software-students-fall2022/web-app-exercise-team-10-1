@@ -80,7 +80,7 @@ def add_item():
 
     return render_template('addpage.html')
 
-@app.route('/items/edit/<item_id>', methods = ['POST'])
+@app.route('/items/edit/<item_id>', methods = ['GET','POST'])
 def edit_inventory(item_id):
     item = Item.query.get_or_404(item_id)
     new_in = request.form.get('edited quantity value',type=int)
