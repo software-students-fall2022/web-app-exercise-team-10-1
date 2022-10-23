@@ -88,7 +88,7 @@ def edit_inventory(item_id):
         if qty == 0:
             return redirect(url_for('home'))
         
-        db.exampleapp.updateOne({_id: item_id}, {$set: {"quantity": qty}})
+        db.exampleapp.updateOne({'_id': item_id}, {'$set': {'quantity': qty}})
 
     return render_template('edit.html')
 
