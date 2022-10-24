@@ -58,7 +58,7 @@ def search_inventory():
 
 @app.route('/items/delete/<item_id>', methods=['GET','POST'])
 def delete(item_id):
-    db.exampleapp.delete_one(item_id)
+    db.exampleapp.delete_one({"_id": ObjectId(item_id)})
     return render_template('delete.html')
     
     
@@ -84,15 +84,21 @@ def add_item():
 @app.route('/items/edit/<item_id>', methods = ['GET','POST'])
 def edit_inventory(item_id):
     if request.method == 'POST':
+        itemName = request.form['iname']
         qty = request.form.get('quantity',type=int)
         
         if qty == 0:
             return redirect(url_for('home'))
-        
-        #db.exampleapp.updateOne({'_id': item_id}, {'$set': {'quantity': qty}})
+            
+            #db.exampleapp.updateOne({'_id': item_id}, {'$set': {'quantity': qty}})
+        doc = {
+            "name": itemName,
+            "quantity": qty, 
+            "added_at": datetime.datetime.utcnow()
+        }
         db.exampleapp.find_one_and_update(
-            {'_id': item_id},
-            {'$set': {'quantity': qty}})
+            {"_id": ObjectId(item_id)}, # match criteria
+            { "$set": doc })
     return render_template('edit.html')
 
 
