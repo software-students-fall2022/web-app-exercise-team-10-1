@@ -1,8 +1,15 @@
 <html>
-<h2 class="title">Edit Item</h2>
+
 <head>
-  <link rel= "stylesheet" href="/stylesheets/style.css">
+<title></title>
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/style.css') }}">
 </head>
+<body>
+<div id="wrapper">
+<p>
+<h3>Edit Item</h3>
+<p>
+<br>
 <div class="page">
 <form method="post">
   <label for="iname">New Item Name</label>
