@@ -1,11 +1,13 @@
 <html>
 
 <head>
-  <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/searchPage.css') }}">
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/style.css') }}">
 </head>
-<div class="title">Search For an Item in The inventory</div>
+<body>
+<div id="wrapper">
+<p>
+<h3>Search For an Item in The inventory</h3>
 
-<div class="page">
 <form method="POST" class="frm" action="{{ url_for('search_inventory')}}">
   <label for="name">Item Name</label>
   <p>

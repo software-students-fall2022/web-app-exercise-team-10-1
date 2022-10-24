@@ -1,6 +1,6 @@
 body {
   padding: 20px;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -8,7 +8,7 @@ a {
 }
 
 .form-row {
-	padding:0.5em;
+	padding:1em;
 }
 
 form {
@@ -17,7 +17,7 @@ form {
 }
 
 #wrapper {
-	width:800px;
+	width:1800px;
 	padding:2em;
   	background-color:#eee;
 }
@@ -29,13 +29,13 @@ form {
 
 #item-list li {
 	list-style-type: none;
-	padding-top:0.25em;
-	padding-bottom:0.25em;
+	padding-top:1em;
+	padding-bottom:1em;
 }
 
 #item-list li.checked {
 	text-decoration: line-through;
-	padding: 0.25em 0.25em 0.25em 1.5em;
+	padding: 1em 1em 1em 1.5em;
 }
 
 .qty {
@@ -51,7 +51,7 @@ input[type=submit] {
 	background:#ccc; 
 	border:0 none;
 	cursor:pointer;
-	font-size:1em;
+	font-size:10em;
 }
 
 input {
@@ -68,7 +68,7 @@ button {
 	background:#ccc; 
 	border:0 none;
 	cursor:pointer;
-	font-size:1em;
+	font-size:10em;
 }
 
 button:hover {
