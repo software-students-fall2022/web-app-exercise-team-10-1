@@ -6,36 +6,34 @@
 <div class="title">Search For an Item in The inventory</div>
 
 <div class="page">
-<form method="GET" class="frm">
+<form method="POST" class="frm" action="{{ url_for('search_inventory')}}">
+  <label for="name">Item Name</label>
   <p>
-    Item name:
-    <input type="text" name="fname"/><br />
+    <input type="text" name="name"
+    placeholder="Item name"></input>
   </p>
   <p>
-    <input type="submit" name="post-btn" value="Submit" />
+    <input type="submit" value="Search" class="search-btn" />
   </p>
-  <table>
-    <tr>
-      <td>Item Name</td>
-      <td>Quantity</td>
-      <td></td>
-      <td></td>
-    </tr>
-    {% for item in item %}
-    <tr>
+<table>
+  <tr>
+		<td>Item Name</td>
+		<td>Quantity</td>
+		<td></td>
+		<td></td>
+	</tr>
+  {% for item in item %}
+  <tr>
+  <article class="items">
+      <td>Name:{{item.name}}</td>
+      <td>Quantity:{{item.quantity}}</td>
       <td>
-        {{item.name}}
-      </td>
-      <td >
-        {{ item.quantity }}
-      </td>
-      <td>
-      <a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="/items/delete/<item_id>">Delete</a>
+      <a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="{{ url_for('delete',item_id=item._id)}}">Delete</a>
     </td>
-      
-    </tr>
-    {%endfor%}
-  </table>
+  </article>
+</tr>
+  {% endfor %}
+</table>
   <p>
     <a href="{{ url_for('home')}}">Home</a>
   </p>

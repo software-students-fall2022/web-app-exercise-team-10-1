@@ -43,21 +43,22 @@ def home():
     Route for the home page
     """
     return render_template("home.html")
-@app.route('/inventories/search_item', methods=['GET'])
+@app.route('/inventories/search_item', methods=['GET', 'POST'])
 def search_inventory():
-    name = request.args.get('name')
-    docs = db.exampleapp.find({"name": {"$regex": name, "$options": "i"}})
-    if not docs:
-        return jsonify({'error': 'item not found'})
-    
-    return render_template("searchpage.html")
+    if request.method=='GET':
+        return render_template('searchpage.html')
+    if request.method=='POST':
+        name = request.form.get('name')
+        item = db.exampleapp.find({"name": {"$regex": name, "$options": "i"}})
+        if not item:
+            return jsonify({'error': 'item not found'})
+        
+        return render_template("searchpage.html", item=item)
 
 
 @app.route('/items/delete/<item_id>', methods=['GET','POST'])
 def delete(item_id):
-    item = Item.query.get_or_404(item_id)
-    db.exampleapp.delete_one(item)
-    db.exampleapp.commit()
+    db.exampleapp.delete_one(item_id)
     return render_template('delete.html')
     
     
@@ -99,3 +100,8 @@ def edit_inventory(item_id):
 def view_all():
     item = db.exampleapp.find({}).sort("created_at", -1)
     return render_template('viewall.html', item=item) 
+# run the app
+if __name__ == "__main__":
+    #import logging
+    #logging.basicConfig(filename='/home/ak8257/error.log',level=logging.DEBUG)
+    app.run(debug = True)
