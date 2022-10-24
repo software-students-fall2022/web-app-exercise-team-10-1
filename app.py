@@ -99,6 +99,7 @@ def edit_inventory(item_id):
         db.exampleapp.find_one_and_update(
             {"_id": ObjectId(item_id)}, # match criteria
             { "$set": doc })
+        return render_template('home.html')
     return render_template('edit.html')
 
 
