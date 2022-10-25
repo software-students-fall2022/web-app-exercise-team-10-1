@@ -37,7 +37,8 @@ The back-end code will integrate with this database. However, it may be occasion
 - exit the database shell whenever you have had your fill: `exit`
 
 ### Create a `.env` file
-* The .env file can be found in our Discord channel under the thread "Required files".
+* The content placed in our .env file can be found in our Discord channel under the thread "Required files".<br>
+Please create a .env file with this content.
 
 ### Set up a Python virtual environment
 
