@@ -1,0 +1,33 @@
+<html>
+<head>
+<title></title>
+<link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/style.css') }}">
+</head>
+<body>
+<div id="wrapper">
+<h2>Inventory</h2>
+<table>
+	<tr>
+		<td>Item Name</td>
+		<td>Quantity</td>
+	</tr>
+	{% for item in item %}
+	<tr>
+		<td>
+			{{item.name}}
+		</td>
+		<td >
+			{{ item.quantity }}
+		</td>
+		<td>
+		<a href="{{ url_for('edit_inventory',item_id=item._id)}}">Edit</a> | <a href="{{ url_for('delete',item_id=item._id)}}">Delete</a>
+	</td>
+		
+	</tr>
+	{%endfor%}
+</table>
+
+<a href="{{url_for('home')}}"> Back to home</a>
+</div>
+<body>
+</html>

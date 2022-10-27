@@ -1,0 +1,41 @@
+.title{
+    color:midnightblue;
+    text-align: center;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.page{
+    margin:auto;
+    width: 50%;
+    height: 50%;
+    border: 3px solid midnightblue;;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.frm{
+    color:midnightblue;
+    text-align: center;
+    position: fixed;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid;
+  border-collapse:collapse;
+  text-align: center;
+}
+
+a:link{
+    color:pink;
+}

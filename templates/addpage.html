@@ -1,0 +1,39 @@
+
+<html>
+
+<head>
+<title></title>
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='stylesheets/style.css') }}">
+</head>
+<body>
+
+<div id="wrapper">
+<p>
+<h3>Add Item To Inventory</h3>
+<p>
+<br>
+<form method="post" class="frm">
+<p>
+  <label for="iname">Item Name</label>
+  <br>
+  <input type="text" name="iname"
+  placeholder="Item name"></input>
+  <p>
+<br>
+  <p>
+<label for="quantity">Quantity</label>
+  <br>
+  <input type="number" name="quantity"
+  placeholder=0></input>
+  <p>
+<br>
+  
+    <a href="{{url_for('home')}}"> Back to home</a>
+    <button type="submit">Submit</button>
+  
+ 
+</form>
+
+</div>
+</body>
+</html>
